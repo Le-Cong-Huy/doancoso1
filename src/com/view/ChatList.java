@@ -139,7 +139,7 @@ public class ChatList extends javax.swing.JFrame {
         server.setVisible(true);
         client.setVisible(true);
         server.startServer(1234);
-        client.connectToServer("192.168.1.11", 1234);
+        client.connectToServer("127.0.0.1", 1234);
         this.dispose();
     }
     }//GEN-LAST:event_jTable1MouseReleased
