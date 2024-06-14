@@ -46,17 +46,23 @@ public class Signup extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         taikhoan = new javax.swing.JTextField();
-        matkhau = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        xacnhanmatkhau = new javax.swing.JTextField();
         btnregister = new javax.swing.JButton();
+        on = new javax.swing.JLabel();
+        off = new javax.swing.JLabel();
+        on1 = new javax.swing.JLabel();
+        off1 = new javax.swing.JLabel();
+        matkhau = new javax.swing.JPasswordField();
+        xacnhanmatkhau = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sign up");
         setBackground(new java.awt.Color(102, 102, 205));
         setPreferredSize(new java.awt.Dimension(400, 500));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(157, 192, 235));
@@ -83,18 +89,7 @@ public class Signup extends javax.swing.JFrame {
                 taikhoanActionPerformed(evt);
             }
         });
-        jPanel1.add(taikhoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 300, -1));
-
-        matkhau.setBackground(new Color(0,0,0,0));
-        matkhau.setFont(new java.awt.Font("SF Mono", 1, 18)); // NOI18N
-        matkhau.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-        matkhau.setPreferredSize(new java.awt.Dimension(70, 30));
-        matkhau.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                matkhauActionPerformed(evt);
-            }
-        });
-        jPanel1.add(matkhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 300, -1));
+        jPanel1.add(taikhoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 300, 30));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/Password_1.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
@@ -114,17 +109,6 @@ public class Signup extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/Lock Orientation.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
 
-        xacnhanmatkhau.setBackground(new Color(0,0,0,0));
-        xacnhanmatkhau.setFont(new java.awt.Font("SF Mono", 1, 18)); // NOI18N
-        xacnhanmatkhau.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-        xacnhanmatkhau.setPreferredSize(new java.awt.Dimension(70, 30));
-        xacnhanmatkhau.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                xacnhanmatkhauActionPerformed(evt);
-            }
-        });
-        jPanel1.add(xacnhanmatkhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 300, -1));
-
         btnregister.setBackground(new java.awt.Color(250, 211, 238));
         btnregister.setFont(new java.awt.Font("SF Mono", 1, 14)); // NOI18N
         btnregister.setForeground(new java.awt.Color(51, 51, 51));
@@ -141,6 +125,56 @@ public class Signup extends javax.swing.JFrame {
         });
         jPanel1.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 160, -1));
 
+        on.setForeground(new java.awt.Color(255, 255, 255));
+        on.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/visible.png"))); // NOI18N
+        on.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        on.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                onMouseClicked(evt);
+            }
+        });
+        jPanel1.add(on, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 100, 70));
+
+        off.setForeground(new java.awt.Color(255, 255, 255));
+        off.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/invisible.png"))); // NOI18N
+        off.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        off.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                offMouseClicked(evt);
+            }
+        });
+        jPanel1.add(off, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 60, 70));
+
+        on1.setForeground(new java.awt.Color(255, 255, 255));
+        on1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/visible.png"))); // NOI18N
+        on1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        on1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                on1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(on1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 60, 40));
+
+        off1.setForeground(new java.awt.Color(255, 255, 255));
+        off1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/invisible.png"))); // NOI18N
+        off1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        off1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                off1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(off1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 120, 40));
+
+        matkhau.setBackground(new Color(0,0,0,0));
+        matkhau.setFont(new java.awt.Font("SF Mono", 1, 16)); // NOI18N
+        matkhau.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+        jPanel1.add(matkhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 305, 33));
+
+        xacnhanmatkhau.setBackground(new Color(0,0,0,0));
+        xacnhanmatkhau.setFont(new java.awt.Font("SF Mono", 1, 16)); // NOI18N
+        xacnhanmatkhau.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+        jPanel1.add(xacnhanmatkhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 305, 33));
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 390, 500);
 
@@ -150,14 +184,6 @@ public class Signup extends javax.swing.JFrame {
     private void taikhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taikhoanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_taikhoanActionPerformed
-
-    private void matkhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matkhauActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_matkhauActionPerformed
-
-    private void xacnhanmatkhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xacnhanmatkhauActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_xacnhanmatkhauActionPerformed
 
     private void btnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregisterActionPerformed
         String Taikhoan , Matkhau , Xacnhanmatkhau;
@@ -207,6 +233,36 @@ public class Signup extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_btnregisterActionPerformed
 
+    private void onMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onMouseClicked
+        on.setVisible(false);
+        off.setVisible(true);
+        xacnhanmatkhau.setEchoChar((char)0);
+
+    }//GEN-LAST:event_onMouseClicked
+
+    private void offMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_offMouseClicked
+        // TODO add your handling code here:
+        on.setVisible(true);
+        off.setVisible(false);
+        xacnhanmatkhau.setEchoChar('*');
+        
+    }//GEN-LAST:event_offMouseClicked
+
+    private void on1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_on1MouseClicked
+        // TODO add your handling code here:
+        on1.setVisible(false);
+        off1.setVisible(true);
+        matkhau.setEchoChar((char)0);
+        
+    }//GEN-LAST:event_on1MouseClicked
+
+    private void off1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_off1MouseClicked
+        // TODO add your handling code here:
+         on1.setVisible(true);
+        off1.setVisible(false);
+        matkhau.setEchoChar('*');
+    }//GEN-LAST:event_off1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -253,8 +309,12 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField matkhau;
+    private javax.swing.JPasswordField matkhau;
+    private javax.swing.JLabel off;
+    private javax.swing.JLabel off1;
+    private javax.swing.JLabel on;
+    private javax.swing.JLabel on1;
     private javax.swing.JTextField taikhoan;
-    private javax.swing.JTextField xacnhanmatkhau;
+    private javax.swing.JPasswordField xacnhanmatkhau;
     // End of variables declaration//GEN-END:variables
 }

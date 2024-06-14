@@ -100,8 +100,11 @@ public class Edit extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         positiontxt = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Edit contact");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(157, 192, 235));
@@ -111,40 +114,40 @@ public class Edit extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Dream");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 100, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 100, 30));
 
         addresstxt.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jPanel1.add(addresstxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 200, 30));
+        jPanel1.add(addresstxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 200, 30));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Gender");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 100, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 100, 30));
 
         fullnametxt.setBackground(new java.awt.Color(242, 242, 242));
         fullnametxt.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jPanel1.add(fullnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 200, 30));
+        jPanel1.add(fullnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 200, 30));
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Day of Birth");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 100, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 100, 30));
 
         dateofbirthtxt.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jPanel1.add(dateofbirthtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 200, 30));
+        jPanel1.add(dateofbirthtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 200, 30));
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Most Favorite Hobby");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 140, 30));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 140, 30));
 
         dreamtxt.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jPanel1.add(dreamtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 200, 30));
+        jPanel1.add(dreamtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 200, 30));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Full Name ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 100, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 100, 30));
 
         mostfavoritehobbycombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Read books", "Listen to music", "Do sports", "Watch television", "Go camping", "Go shopping", "Go swimming", "Jogging", "Take photo" }));
         mostfavoritehobbycombobox.addActionListener(new java.awt.event.ActionListener() {
@@ -152,36 +155,36 @@ public class Edit extends javax.swing.JFrame {
                 mostfavoritehobbycomboboxActionPerformed(evt);
             }
         });
-        jPanel1.add(mostfavoritehobbycombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 200, 30));
+        jPanel1.add(mostfavoritehobbycombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 200, 30));
 
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Phone Number");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 100, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 100, 30));
 
         phonenumbertxt.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jPanel1.add(phonenumbertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 200, 30));
+        jPanel1.add(phonenumbertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 200, 30));
 
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Email Address");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 100, 30));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 100, 30));
 
         emailaddresstxt.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jPanel1.add(emailaddresstxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 200, 30));
+        jPanel1.add(emailaddresstxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 200, 30));
 
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Company");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 100, 30));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 100, 30));
 
         companytxt.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jPanel1.add(companytxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 200, 30));
+        jPanel1.add(companytxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 200, 30));
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Address");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 100, 30));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 100, 30));
 
         gendercombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Female", "Male" }));
         gendercombobox.addActionListener(new java.awt.event.ActionListener() {
@@ -189,15 +192,15 @@ public class Edit extends javax.swing.JFrame {
                 gendercomboboxActionPerformed(evt);
             }
         });
-        jPanel1.add(gendercombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 200, 30));
+        jPanel1.add(gendercombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 200, 30));
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setText("Position");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 100, 30));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 100, 30));
 
         positiontxt.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jPanel1.add(positiontxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 200, 30));
+        jPanel1.add(positiontxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 200, 30));
 
         jButton6.setBackground(new java.awt.Color(250, 211, 238));
         jButton6.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
@@ -212,7 +215,11 @@ public class Edit extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 210, 80));
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 210, 80));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        jLabel1.setText("EDIT CONTACT");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 500));
 
@@ -357,6 +364,7 @@ public class Edit extends javax.swing.JFrame {
     private javax.swing.JTextField fullnametxt;
     private javax.swing.JComboBox<String> gendercombobox;
     private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;

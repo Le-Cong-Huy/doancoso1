@@ -57,6 +57,7 @@
         jlable2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
         setMaximumSize(new java.awt.Dimension(1380, 600));
         setMinimumSize(new java.awt.Dimension(1210, 600));
         setPreferredSize(new java.awt.Dimension(1210, 600));
