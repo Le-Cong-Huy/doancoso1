@@ -69,14 +69,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="severbtn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="G&#x1eed;i"/>
+        <Property name="text" type="java.lang.String" value="Send"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="severbtnActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="340" y="230" width="50" height="50"/>
+          <AbsoluteConstraints x="330" y="230" width="70" height="50"/>
         </Constraint>
       </Constraints>
     </Component>

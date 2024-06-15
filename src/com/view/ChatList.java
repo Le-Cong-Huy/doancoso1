@@ -12,6 +12,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.*;
+import java.awt.event.*;
+import java.io.*;
+import java.net.*;
 /**
  *
  * @author Admin
@@ -40,8 +44,6 @@ public class ChatList extends javax.swing.JFrame {
             }
             
         });
-        
-        
         try(
                 Connection con = DriverManager.getConnection(url,user,pass);
                 PreparedStatement pst = con.prepareStatement("select * from thongtinchitiet");
@@ -135,11 +137,11 @@ public class ChatList extends javax.swing.JFrame {
         String tenduocchon = jTable1.getValueAt(selectedRow, 0).toString();
         ChatClient client = new ChatClient();
         ChatSever server = new ChatSever(tenduocchon, client);
+        server.startServer(1234);
+        client.connectToServer("127.0.0.1",1234);
         this.setVisible(false);
         server.setVisible(true);
         client.setVisible(true);
-        server.startServer(1234);
-        client.connectToServer("127.0.0.1", 1234);
         this.dispose();
     }
     }//GEN-LAST:event_jTable1MouseReleased

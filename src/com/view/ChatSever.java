@@ -10,6 +10,10 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import javax.swing.*;
+import java.awt.event.*;
+import java.io.*;
+import java.net.*;
 
 
 /**
@@ -37,15 +41,14 @@ public class ChatSever extends javax.swing.JFrame {
         addWindowListener(new WindowAdapter(){
             @Override
             public void windowClosing(WindowEvent e) {
-                
-                if (client != null) {
+                if (client!=null)
+                {
                     client.dispose();
                 }
                 ChatList chatList = new ChatList();
                 chatList.setVisible(true);
                 dispose();
             }
-            
         });
     }
   
@@ -57,25 +60,30 @@ public class ChatSever extends javax.swing.JFrame {
                 s = ss.accept();
                 in = new DataInputStream(s.getInputStream());
                 out = new DataOutputStream(s.getOutputStream());
-                while (!inputtext.equals("exit")) {
+                while (true) {
                     inputtext = in.readUTF();
                     String formattedMessage = String.format("%-10s\t%s", user, inputtext);
+                    SwingUtilities.invokeLater(() -> {
                     severarea.setText(severarea.getText().trim() + "\n" + formattedMessage);
+                    });
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-            }
-            finally {
-                try {
-                    if (in != null) in.close();
-                    if (out != null) out.close();
-                    if (s != null) s.close();
-                    if (ss != null) ss.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            } finally {
+                closeResources();
             }
         }).start();
+    }
+
+    private void closeResources() {
+        try {
+            if (in != null) in.close();
+            if (out != null) out.close();
+            if (s != null) s.close();
+            if (ss != null) ss.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -106,13 +114,13 @@ public class ChatSever extends javax.swing.JFrame {
         severtxt.setForeground(new java.awt.Color(51, 51, 51));
         getContentPane().add(severtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 310, 50));
 
-        severbtn.setText("Gửi");
+        severbtn.setText("Send");
         severbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 severbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(severbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 50, 50));
+        getContentPane().add(severbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 70, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

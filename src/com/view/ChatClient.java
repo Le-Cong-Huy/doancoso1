@@ -9,6 +9,10 @@ import java.awt.event.WindowEvent;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
+import javax.swing.*;
+import java.awt.event.*;
+import java.io.*;
+import java.net.*;
 
 /**
  *
@@ -28,41 +32,43 @@ public class ChatClient extends javax.swing.JFrame {
         setLocationRelativeTo(this);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
-//        addWindowListener(new WindowAdapter(){
-//            @Override
-//            public void windowClosing(WindowEvent e) {
-//                ChatList chatList = new ChatList();
-//                chatList.setVisible(true);
-//                dispose();
-//            }
-//            
-//        });
+//        addWindowListener(new WindowAdapter() {
+//                    @Override
+//                    public void windowClosing(WindowEvent e) {
+//                        closeResources();
+//                    }
+//                });
+            
     }
     public void connectToServer(String address, int port) {
         new Thread(() -> {
-            String inputtext = "";
             try {
                 s = new Socket(address, port);
                 in = new DataInputStream(s.getInputStream());
                 out = new DataOutputStream(s.getOutputStream());
-                while (!inputtext.equals("exit")) {
-                    inputtext = in.readUTF();
+                while (true) {
+                    String inputtext = in.readUTF();
                     String formattedMessage = String.format("%-10s\t%s", "Admin:", inputtext);
+                    SwingUtilities.invokeLater(() -> {
                     clientarea.setText(clientarea.getText().trim() + "\n" + formattedMessage);
+                    });
                 }
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
-            }
-            finally {
-                try {
-                    if (in != null) in.close();
-                    if (out != null) out.close();
-                    if (s != null) s.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            } finally {
+                closeResources();
             }
         }).start();
+    }
+
+    private void closeResources() {
+        try {
+            if (in != null) in.close();
+            if (out != null) out.close();
+            if (s != null) s.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -87,19 +93,19 @@ public class ChatClient extends javax.swing.JFrame {
         clientarea.setRows(5);
         jScrollPane1.setViewportView(clientarea);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 390, 220));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 380, 220));
 
         clienttxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         clienttxt.setForeground(new java.awt.Color(51, 51, 51));
         getContentPane().add(clienttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 310, 50));
 
-        clientbtn.setText("Gửi");
+        clientbtn.setText("Send");
         clientbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clientbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(clientbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 50, 50));
+        getContentPane().add(clientbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 70, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -107,7 +113,7 @@ public class ChatClient extends javax.swing.JFrame {
     private void clientbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientbtnActionPerformed
         // TODO add your handling code here:
          String outputtext = clienttxt.getText().trim();
-        try {
+         try {
             if (!outputtext.isEmpty()) {
                 String formattedMessage = String.format("%-10s\t%s", "You:", outputtext);
                 clientarea.setText(clientarea.getText().trim() + "\n" + formattedMessage);
